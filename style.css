@@ -1,0 +1,183 @@
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    /* خلفية زرقاء داكنة مع صورة خفيفة */
+    background: linear-gradient(rgba(0, 34, 68, 0.9), rgba(0, 34, 68, 0.9)), 
+                url('https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* الواجهة العلوية البيضاء */
+.top-header {
+    background-color: #ffffff;
+    padding: 20px 50px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* الكتابة الذهبية */
+.welcome-text {
+    color: #DAA520; /* لون ذهبي */
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.brand-name {
+    color: #DAA520;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* أزرار الواجهة العلوية */
+.user-actions button {
+    background-color: #002244;
+    color: #DAA520;
+    border: 1px solid #DAA520;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* حيوية في الموقع */
+}
+
+.user-actions button:hover {
+    background-color: #DAA520;
+    color: #002244;
+    transform: translateY(-2px); /* حركة عند تمرير الماوس */
+}
+
+/* القسم الرئيسي (Hero) */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 2s ease-in; /* أنيميشن للظهور */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* شبكة المنتجات */
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 50px 50px;
+}
+
+.product-card {
+    background: #fff;
+    color: #002244;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* حيوية عند لمس المنتج */
+    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card .price {
+    font-size: 1.5rem;
+    color: #DAA520;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    background: #DAA520;
+    color: #002244;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover { background: #b8860b; }
+
+/* النوافذ المنبثقة (Modals) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    border: 2px solid #DAA520;
+}
+
+.close {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn, .accept-btn {
+    width: 100%;
+    padding: 15px;
+    background: #002244;
+    color: #DAA520;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.accept-btn { background: #27ae60; color: white; }
+.accept-btn:hover { background: #219150; }
+.submit-btn:hover { background: #DAA520; color: #002244; }
+
+#cart-items { list-style: none; color: #333; text-align: right; margin: 20px 0; }
+#cart-items li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+.total { font-size: 1.5rem; color: #002244; font-weight: bold; margin-bottom: 20px; }

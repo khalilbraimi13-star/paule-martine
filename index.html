@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paule Martine</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- إضافة خطوط احترافية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- الواجهة العلوية البيضاء -->
+    <header class="top-header">
+        <h2 class="welcome-text">Welcome to Paule Martine</h2>
+        <h1 class="brand-name">Paule Martine</h1>
+        <div class="user-actions">
+            <button onclick="openModal('loginModal')">تسجيل الدخول / إنشاء حساب</button>
+            <button onclick="openModal('cartModal')">🛒 السلة (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي (خلفية زرقاء مع صورة) -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>أناقة رجل الأعمال العصري</h2>
+            <p>اكتشف أحدث التشكيلات من البدلات الكلاسيكية والملابس الرسمية.</p>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات -->
+    <section class="products" id="products">
+        <h2 style="text-align: center; color: #fff; margin-bottom: 30px;">اختر ملابسك</h2>
+        <div class="product-grid">
+            <!-- منتج 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=400&q=80" alt="بدلة كلاسيكية">
+                <h3>بدلة كلاسيكية سوداء</h3>
+                <p>المقاسات المتوفرة: S, M, L, XL, XXL</p>
+                <div class="price">2500 درهم</div>
+                <button class="add-to-cart" onclick="addToCart('بدلة كلاسيكية سوداء', 2500)">أضف إلى السلة</button>
+            </div>
+            <!-- منتج 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=400&q=80" alt="قميص أعمال">
+                <h3>قميص أبيض رسمي</h3>
+                <p>المقاسات المتوفرة: M, L, XL</p>
+                <div class="price">450 درهم</div>
+                <button class="add-to-cart" onclick="addToCart('قميص أبيض رسمي', 450)">أضف إلى السلة</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة تسجيل الدخول المنبثقة -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 style="color: #002244;">تسجيل الدخول / إنشاء حساب</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="البريد الإلكتروني (Gmail)" required>
+                <input type="password" placeholder="كلمة المرور (Mot de passe)" required>
+                <button type="submit" class="submit-btn">دخول</button>
+            </form>
+            <p style="margin-top: 10px; font-size: 14px; color: #333;">للإستفسار: <br> contact@paulemartine.com</p>
+        </div>
+    </div>
+
+    <!-- نافذة سلة المشتريات والدفع -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-content">
+            <span class="close" onclick="closeModal('cartModal')">&times;</span>
+            <h2 style="color: #002244;">مشترياتك</h2>
+            <ul id="cart-items"></ul>
+            <div class="total">المجموع: <span id="total-price">0</span> درهم</div>
+            <button class="accept-btn" onclick="checkout()">Accept & Pay (الدفع)</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
